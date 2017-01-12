@@ -104,20 +104,29 @@ class WMRequestX2
 
     /**
      * WMRequestX2 constructor.
-     * @param $data
+     * @param $wmID
+     * @param $sender_purse
+     * @param $key
+     * @param $password
+     * @param $reqn
+     * @param $recipient_purse
+     * @param $amount
+     * @param $description
+     * @param $tranID
      */
-    public function __construct($data)
+    public function __construct($wmID, $sender_purse, $key, $password,
+                                    $reqn, $recipient_purse, $amount, $description, $tranID)
     {
-        $this->WMID        = $data['WMID'];
-        $this->payer       = $data['payer'];
-        $this->key         = $data['key'];
-        $this->password    = $data['password'];
+        $this->WMID        = $wmID;
+        $this->payer       = $sender_purse;
+        $this->key         = $key;
+        $this->password    = $password;
 
-        $this->reqn        = $data['reqn'];
-        $this->payee       = $data['payee'];
-        $this->amount      = $data['amount'];
-        $this->description = $data['description'];
-        $this->tranID      = $data['tranID'];
+        $this->reqn        = $reqn;
+        $this->payee       = $recipient_purse;
+        $this->amount      = $amount;
+        $this->description = $description;
+        $this->tranID      = $tranID;
 
         $this->period      = 0;
         $this->pcode       = '';

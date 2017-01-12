@@ -24,4 +24,16 @@ class WMServiceProvider extends ServiceProvider {
             __DIR__ . '/../config/config.php' => config_path('webmoney.php')
         ]);
     }
+
+    /**
+     * Register the application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->app->bind('webmoney', function () {
+            return new WMContainer();
+        });
+    }
 }
