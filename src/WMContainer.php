@@ -8,6 +8,7 @@
 
 namespace Pusha\LaravelWebMoney;
 
+use Illuminate\Support\Facades\Config;
 
 class WMContainer
 {
